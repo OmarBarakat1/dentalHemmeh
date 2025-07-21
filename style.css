@@ -112,56 +112,11 @@
     transform: scale(1.05);
 }
 
-/* نموذج الانضمام */
-.join-form {
-    padding: 50px 20px;
-    background-color: var(--background-color-dark);
-    text-align: center;
-    color: var(--secondary-color);
-}
-
-.join-form h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.join-form form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.join-form input,
-.join-form textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    resize: none;
-}
-
-.join-form button {
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.join-form button:hover {
-    background-color: var(--secondary-color);
-}
-
 /* العدادات */
 .counters {
     padding: 50px 20px;
     text-align: center;
-    background-color: var(--background-color-light);
+    background-color: var(--background-color-dark);
 }
 
 .counters h2 {
@@ -189,7 +144,7 @@
 
 /* التذييل */
 .footer {
-    background-color: var(--background-color-dark);
+    background-color: var(--background-color-light);
     color: var(--secondary-color);
     padding: 20px 0;
     text-align: center;
@@ -198,6 +153,7 @@
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .footer h3 {
@@ -231,6 +187,31 @@
     font-size: 14px;
 }
 
+.joinButton {
+    background-color: var(--primary-color);
+    color: var(--background-color-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    right: 20px;
+}
+
+.joinButton:hover {
+    background-color: var(--secondary-color);
+}
+
+.joinButton a {
+    text-decoration: none;
+    color: var(--background-color-light);
+    font-size: 25px;
+}
+
 /* تصميم متجاوب */
 @media (max-width: 768px) {
     .navbar {
@@ -261,10 +242,6 @@
 
     }
 
-    .navbar img {
-        display: none;
-    }
-
     .gallery img {
         width: 100%;
         max-width: 300px;
@@ -278,4 +255,15 @@
         gap: 15px;
     }
 
+    .joinButton {
+        position: static;
+        margin: 0 auto 10px;
+        width: 100%;
+        border-radius: 0;
+        transform: translateY(0);
+    }
+
+    .joinButton a {
+        font-size: 20px;
+    }
 }
