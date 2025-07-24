@@ -1,0 +1,522 @@
+.bx{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.206);
+}
+.df{
+    display: flex;
+}
+.dg{
+    display: grid;
+}
+.dn{
+    display: none;
+}
+.dib {
+    display: inline-block;
+}
+.db{
+    display: block;
+}
+.na{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.oh{
+    overflow: hidden;
+}
+.bt{
+    border-radius: 5px;
+    padding: 10px;
+    width: fit-content;
+}
+.po{
+    cursor: pointer;
+}
+.trx{
+    transform: translateX(50%);
+}
+.trx-{
+    transform: translateX(-50%);
+}
+.try {
+    transform: translateY(50%);
+}
+
+.try- {
+    transform: translateY(-50%);
+}
+.trc-{
+    transform: translate(-50%,-50%);
+}
+.trc{
+    transform: translate(50%, 50%);
+}
+.trxf {
+    transform: translateX(100%);
+}
+
+.trxf- {
+    transform: translateX(-100%);
+}
+
+.tryf {
+    transform: translateY(100%);
+}
+
+.tryf- {
+    transform: translateY(-100%);
+}
+
+.trcf- {
+    transform: translate(-100%, -100%);
+}
+
+.trcf {
+    transform: translate(100%, 100%);
+}
+.r50p {
+    border-radius: 50%;
+}
+.pr{
+    position: relative;
+}
+.pb{
+    position: absolute;
+}
+.bs {
+    border-style: solid;
+}
+.nb{
+    border: none;
+}
+.nbt{
+    border-top: none;
+}
+.nbr {
+    border-right: none;
+}
+.nbb {
+    border-bottom: none;
+}
+.nbl{
+    border-left: none;
+}
+.nbrl{
+    border-left: none;
+    border-right: none;
+}
+.nbtb{
+    border-top: none;
+    border-bottom: none;
+}
+.os {
+    outline-style: solid;
+}
+.no {
+    outline: none;
+}
+.wf{
+    width: fit-content;
+}
+.tr{
+    transition: .3s;
+}
+.af{
+   align-items:center;
+}
+.jf {
+
+    justify-content: center;
+}
+.ab{
+    align-content: space-between;
+}
+.sb{
+    justify-content: space-between;
+}
+.sa {
+    justify-content: space-around;
+}
+.se{
+    justify-content: space-evenly;
+}
+.je{
+    justify-content: flex-end;
+}
+.fw{
+    flex-wrap: wrap;
+}
+.fc{
+    flex-direction: column;
+}
+.f1{
+    flex: 1;
+}
+.tc{
+    text-align: center;
+}
+.te{
+    text-align: end;
+}
+.ts{
+    text-align: start;
+}
+.fb{
+    font-weight: bold;
+}
+.vh{
+    height: 100vh;
+}
+.mu{
+ margin: auto;
+}
+.rn{
+ resize: none;
+}
+.bgw {
+    background-color: white;
+}
+.bgk {
+    background-color: black;
+}
+
+.bgg {
+    background-color: green;
+}
+.bglg {
+    background-color: lightgreen;
+}
+.bgdg {
+    background-color: darkgreen;
+}
+.bgb {
+    background-color: blue;
+}
+.bglb {
+    background-color: lightblue;
+}
+.bgdb {
+    background-color: darkblue;
+}
+.bgi {
+    background-color: grey;
+}
+.bgli{
+background-color: lightgrey;
+}
+.bgdi {
+    background-color: darkgrey;
+}
+.bgp {
+    background-color: pink;
+}
+.bglp {
+    background-color: lightpink;
+}
+.bge {
+    background-color: purple;
+}
+.bgle {
+    background-color: darkviolet;
+}
+.bgn {
+    background-color: brown;
+}
+.bgy {
+    background-color: yellow;
+}
+
+.bgly {
+    background-color: lightyellow;
+}
+.bgo {
+    background-color: orange;
+}
+.bglo {
+    background-color: rgb(255, 210, 0);
+}
+.bgdo {
+    background-color: darkorange;
+}
+.bgr {
+    background-color: red;
+}
+.bglr{
+    background-color: rgb(255, 100, 100);
+}
+.bgdr {
+    background-color: darkred;
+}
+.cw {
+    color: white;
+}
+
+.ck {
+    color: black;
+}
+
+.cg {
+    color: green;
+}
+.clg {
+    color: lightgreen;
+}
+.cdg {
+    color: darkgreen;
+}
+.cb {
+    color: blue;
+}
+.clb {
+    color: lightblue;
+}
+.cdb {
+    color: darkblue;
+}
+.ci {
+    color: grey;
+}
+.cli {
+    color: lightgray;
+}
+.cdi {
+    color: darkgray;
+}
+.cp {
+   color: pink;
+}
+.clp {
+    color: lightpink;
+}
+.ce {
+    color: purple;
+}
+.cle {
+    color: darkviolet;
+}
+.cn {
+    color: brown;
+}
+
+.cy {
+    color: yellow;
+}
+.cly {
+    color: lightyellow;
+}
+.co {
+    color: orange;
+}
+.cdo {
+    color: darkorange;
+}
+.clo{
+    color: rgb(255, 210, 0);
+}
+
+.cr{
+    color: red;
+}
+.cdr {
+    color: darkred;
+}
+.bw {
+    border-color: white;
+}
+
+.bk {
+    border-color: black;
+}
+
+.bg {
+    border-color: green;
+}
+
+.blg {
+    border-color: lightgreen;
+}
+
+.bdg {
+    border-color: darkgreen;
+}
+
+.bb {
+    border-color: blue;
+}
+
+.blb {
+    border-color: lightblue;
+}
+
+.bdb {
+    border-color: darkblue;
+}
+
+.bi {
+    border-color: grey;
+}
+
+.bli {
+    border-color: lightgrey;
+}
+
+.bdi {
+    border-color: darkgrey;
+}
+
+.bp {
+    border-color: pink;
+}
+.blp {
+    border-color: lightpink;
+}
+.be {
+    border-color: purple;
+}
+.ble {
+    border-color: darkviolet;
+}
+.bn {
+    border-color: brown;
+}
+
+.by {
+    border-color: yellow;
+}
+
+.bly {
+    border-color: lightyellow;
+}
+
+.bo {
+    border-color: orange;
+}
+
+.bdo {
+    border-color: darkorange;
+}
+.blo{
+    border-color: rgb(255, 210, 0);
+}
+.br {
+    border-color: red;
+}
+
+.bdr {
+    border-color: darkred;
+}
+
+.ow {
+    outline-color: white;
+}
+
+.ok {
+    outline-color: black;
+}
+
+.og {
+    outline-color: green;
+}
+
+.olg {
+    outline-color: lightgreen;
+}
+
+.odg {
+    outline-color: darkgreen;
+}
+
+.ob {
+    outline-color: blue;
+}
+
+.olb {
+    outline-color: lightblue;
+}
+
+.odb {
+    outline-color: darkblue;
+}
+
+.oi {
+    outline-color: grey;
+}
+
+.oli {
+    outline-color: lightgrey;
+}
+
+.odi {
+    outline-color: darkgrey;
+}
+
+.op {
+    outline-color: pink;
+}
+
+.olp {
+   outline-color: lightpink;
+}
+
+.oe {
+    outline-color: purple;
+}
+
+.ole {
+    outline-color: darkviolet;
+}
+
+.on {
+    outline-color: brown;
+}
+
+.oy {
+    outline-color: yellow;
+}
+
+.oly {
+    outline-color: lightyellow;
+}
+
+.oo {
+outline-color: orange;
+}
+
+.odo {
+outline-color: darkorange;
+}
+
+.olo {
+outline-color: rgb(255, 210, 0);
+}
+
+.or {
+outline-color: red;
+}
+
+.odr {
+outline-color: darkred;
+}
+.ad {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.at {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.al {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.ar {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}

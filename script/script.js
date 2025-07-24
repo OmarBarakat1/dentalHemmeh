@@ -1,12 +1,4 @@
- // التحكم بنموذج الانضمام
-        document.getElementById('joinForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const mo = document.getElementById('message').value;
-            alert(`شكرًا ${name} على طلب الانضمام! سنتواصل معك عبر ${email}`);
-            this.reset();
-        });
+
 
         // العدادات الديناميكية
         function animateCounter(id, end, duration) {

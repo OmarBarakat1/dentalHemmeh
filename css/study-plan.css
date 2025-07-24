@@ -1,0 +1,93 @@
+/* تعريف المتغيرات في :root لتكون متاحة عالميًا */
+:root {
+    --primary-color: #7d5a7b;
+    --secondary-color: #513c50;
+    --background-color-light: #f8f8f8;
+    --background-color-dark: #b2b2b2;
+        /* خلفية فاتحة */
+        --text-color: #333;
+        /* لون النص */
+        --white: #fff;
+        /* أبيض */
+        --light-gray: #ecf0f1;
+        /* رمادي فاتح */
+        --font-size-large: 36px;
+        /* حجم خط كبير */
+        --font-size-medium: 28px;
+        /* حجم خط متوسط */
+        --font-size-small: 18px;
+        /* حجم خط صغير */
+        --spacing-large: 50px;
+        /* مسافة كبيرة */
+        --spacing-medium: 20px;
+        /* مسافة متوسطة */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color-light);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* قسم الخطة الدراسية */
+.study-plan {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.study-plan h1 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-medium);
+}
+
+.study-plan select {
+    padding: 10px;
+    font-size: var(--font-size-small);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: var(--spacing-medium);
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.study-plan select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: var(--spacing-medium);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+.content p {
+    font-size: var(--font-size-small);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+
+
+    .study-plan select {
+        width: 100%;
+    }
+}
