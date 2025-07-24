@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة الدراسية</title>
+    <link rel="stylesheet" href="css/study-plan.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+<body>
+  
+
+    <!-- قسم اختيار السنة الدراسية -->
+    <section class="study-plan" id="plan">
+        <h1>اختر سنتك الدراسية</h1>
+        <select id="yearSelect" onchange="navigateToYear()">
+            <option value="" disabled selected>اختر السنة...</option>
+            <option value="pages/files.html">السنة الاولى</option>
+            <option value="pages/files.html">السنة الثانية</option>
+            <option value="pages/files.html">السنة الثالثة</option>
+            <option value="pages/files.html">السنة الرابعة</option>
+            <option value="pages/files.html">السنة الخامسة</option>
+        </select>
+        <div id="content" class="content">
+            <p>يرجى اختيار سنة دراسية لعرض المواد والأدوات المتاحة.</p>
+        </div>
+    </section>
+    <!-- التذييل -->
+    <footer class="footer">
+    
+        <div class="footer-content">
+            <h3>تابعنا على وسائل التواصل الاجتماعي</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1F84JzeahK/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/hemmeh_asnan?igsh=MWYyZndnNnUwOWNmag==" target="_blank"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@hemmehasnan8851?si=mQgt7HhWSGPEQZrf" target="_blank" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div> <!-- social-links-->
+            <div class="joinButton ">
+                <a href="#">انضم الى الهمة</a>
+            </div> <!-- joinButton-->
+            <p>&copy; 2025 همة أسنان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+<script src="script/year.js"></script>
+</body>
+
+</html>
