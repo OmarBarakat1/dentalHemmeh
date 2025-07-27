@@ -61,20 +61,24 @@
 .navbar .toggle-menu {
     display: none;
 }
+
 .dropdown {
-    display: none !important ;
+    display: none !important;
 }
+
 .masterYear {
     position: relative;
     cursor: pointer;
 }
-.top:hover  + .dropdown , .dropdown:hover {
+
+.top:hover+.dropdown,
+.dropdown:hover {
     display: flex !important;
     position: absolute;
     top: 78%;
     flex-direction: column;
-    gap : 5px;
-    list-style:disc;
+    gap: 5px;
+    list-style: disc;
     margin-top: 5px;
     width: 125px;
     padding: 10px 5px 10px 0;
@@ -82,6 +86,8 @@
     border-radius: 5px;
     background-color: var(--background-color-light);
 }
+
+
 /* قسم النبذة */
 .hero {
     text-align: center;
@@ -159,7 +165,7 @@
     color: var(--primary-color);
 }
 
-.counter + p {
+.counter+p {
     color: var(--secondary-color);
 }
 
@@ -207,7 +213,8 @@
 .footer p {
     font-size: 14px;
 }
-.joinButton{
+
+.joinButton {
     background-color: var(--primary-color);
     color: var(--background-color-light);
     padding: 10px 20px;
@@ -221,14 +228,17 @@
     cursor: pointer;
     right: 20px;
 }
-.joinButton:hover{
+
+.joinButton:hover {
     background-color: var(--secondary-color);
 }
-.joinButton a{
+
+.joinButton a {
     text-decoration: none;
     color: var(--background-color-light);
     font-size: 25px;
 }
+
 /* تصميم متجاوب */
 @media (max-width: 768px) {
     .navbar {
@@ -244,10 +254,16 @@
     .navbar .toggle-menu+ul:hover {
         display: flex;
         flex-direction: column;
+
         background-color: var(--background-color-light);
     }
+
     .navbar li {
         margin: 10px 0;
+    }
+
+    .dropdown li {
+        margin: 0 20px;
     }
 
     .navbar .toggle-menu {
@@ -255,6 +271,18 @@
         display: inline-block;
         margin: 0 10px;
         color: var(--primary-color);
+
+    }
+
+    .top:hover+.dropdown,
+    .dropdown:hover {
+
+
+        /* list-style-position:; */
+        left: 50%;
+        transform: translateX(-50%);
+
+
 
     }
 
@@ -270,14 +298,16 @@
     .social-links {
         gap: 15px;
     }
-    .joinButton{
+
+    .joinButton {
         position: static;
         margin: 0 auto 10px;
         width: 100%;
         border-radius: 0;
         transform: translateY(0);
     }
-    .joinButton a{
+
+    .joinButton a {
         font-size: 20px;
     }
 }
