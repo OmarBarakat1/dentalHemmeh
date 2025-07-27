@@ -278,7 +278,7 @@
     .dropdown:hover {
 
 
-        /* list-style-position:; */
+        font-size: 12px;
         left: 50%;
         transform: translateX(-50%);
 
