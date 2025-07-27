@@ -44,6 +44,7 @@
 
 .navbar li {
     margin: 0 20px;
+    color: var(--primary-color);
 }
 
 .navbar a {
@@ -60,7 +61,27 @@
 .navbar .toggle-menu {
     display: none;
 }
-
+.dropdown {
+    display: none !important ;
+}
+.masterYear {
+    position: relative;
+    cursor: pointer;
+}
+.top:hover  + .dropdown , .dropdown:hover {
+    display: flex !important;
+    position: absolute;
+    top: 78%;
+    flex-direction: column;
+    gap : 5px;
+    list-style:disc;
+    margin-top: 5px;
+    width: 125px;
+    padding: 10px 5px 10px 0;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: var(--background-color-light);
+}
 /* قسم النبذة */
 .hero {
     text-align: center;
