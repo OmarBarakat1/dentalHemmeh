@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+
+:root {
+    --primary-color: #7d5a7b;
+    --secondary-color: #513c50;
+    --background-color-light: #f8f8f8;
+    --background-color-dark: #b2b2b2;
+}
+.materials{
+    background-color: var(--background-color-light);
+}
+.materials header{
+    background-color: var(--primary-color);
+    color: var(--background-color-light);
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.semester {
+    border: var(--secondary-color) 2px solid;
+    outline: var(--primary-color) 2px solid;
+    outline-offset: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.semester span {
+    color: var(--primary-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+.semester span.par {
+    background-color: var(--primary-color);
+    padding: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: -80px;
+    border-radius: 5px;
+    color: var(--background-color-light);
+}
+
+.semester:hover span.par {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+   .materials header{
+       margin-top: 10px;
+   }
+    .semester {
+        width:150px;
+        height: 150px;
+    } 
+   span.par{
+       display: none;
+   }
+
+}
+
+@media (max-width:450px) {
+    .semester.Summer{
+        order:3;
+    }
+}
