@@ -130,12 +130,14 @@
     transform: translateY(-50%);
     top: 50%;
     background-color: var(--background-color-light);
-    height: 100%;
+    height: calc(100% - 10px);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     width:30px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
+    border: 2px solid var(--background-color-dark)
  }
  .term label select option{
    text-align: center;
@@ -147,22 +149,37 @@
  }
 
  button {
-     padding: 10px 20px;
-     margin: 0 20px ;
+     padding: 0;
+     margin: 0 20px 20px;
      background-color: var(--primary-color);
      border: 5px solid var(--secondary-color);
      color: var(--background-color-light);
-     cursor: pointer;
      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
      font-weight: bold;
      font-size: 16px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
  }
 
- #result {
-     margin-top: 20px;
-     font-size: 18px;
+ button span {
+     background-color: var(--secondary-color);
+     height: 100%;
+     padding: 10px;
  }
 
+ button span:nth-child(2){
+     position: absolute;
+     left:50%;
+     top: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     padding: 0 10px;
+     transform: translate(-50%, -50%);
+ }
  @media (max-width: 1129px) {
     .term label {
         width : 100%;
@@ -170,21 +187,22 @@
          .number span{
              width: 16%;
          }
+         
  }
 
  @media (max-width: 600px) {
     .number {
-        margin: 0 10px 20px;
+        margin: 0 10px 10px;
         
     }
          .number span {
              font-size: 15px;
-             border: none;
+             border-width: 4px;   
          }
-    .number span:not(:last-child){
-       
-        border-right: 4px solid var(--secondary-color);
-    }
+        .number span:not(:last-child)  {   
+          border-right: none
+         }
+                     
     .term label {
         font-size: 13px;
     }
@@ -203,10 +221,27 @@
     } 
  
  .years h2 ,button{
-    margin: 10px;
+    margin: 0 10px;
     border-width: 4px;
-   
  }
+ button {
+     margin-bottom: 10px;
+ }
+ button span{
+    font-size: 13px;
+    background-color: var(--primary-color);
+ }
+
+ 
+ button span:nth-child(2){
+    position: static;
+    transform: none;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    flex:1 
+ }
+ 
+ 
  .term-decorater h3{
     border-width: 4px;
     
