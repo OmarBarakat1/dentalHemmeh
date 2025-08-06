@@ -1,80 +1,103 @@
-//  function calculateGrades() {
-//             // حساب متوسط كل فصل وكل سنة
-//             const terms = [
-//                 ['y1t1', 'y1t2', 'y1t3'], // FIRST YEAR (5 مواد في FIRST TERM، 6 في SECOND TERM)
-//                 ['y2t1', 'y2t2', 'y2t3'], // SECOND YEAR (5 مواد في FIRST TERM، 6 في SECOND TERM)
-//                 ['y3t1', 'y3t2', 'y3t3'], // THIRD YEAR (7 مواد في FIRST TERM، 9 في SECOND TERM، 4 في SUMMER TERM)
-//                 ['y4t1', 'y4t2', 'y4t3'], // FOURTH YEAR (13 مواد في FIRST TERM، 11 في SECOND TERM)
-//                 ['y5t1', 'y5t2', 'y5t3']  // FIFTH YEAR
-//             ];
+// Grade point values for each letter grade
+const gradePoints = {
+    'A': 4.0,
+    'A-': 3.75,
+    'B+': 3.5,
+    'B': 3.0,
+    'B-': 2.75,
+    'C+': 2.5,
+    'C': 2.0,
+    'C-': 1.75,
+    'D+': 1.5,
+    'D': 1.0,
+    'D-': 0.75,
+    'F': 0.0
+};
 
-//             let yearAverages = [];
-//             for (let i = 0; i < 5; i++) {
-//                 let yearTotal = 0;
-//                 let termCount = 0;
-//                 for (let j = 0; j < 3; j++) {
-//                     let termAvg = 0;
-//                     let subjectCount = 0;
-//                     let subjectLimit = [5, 6, 3, 5, 6, 3, 7, 9, 4, 13, 11, 3, 3, 3, 3][(i * 3) + j]; // تعيين عدد المواد بناءً على السنة والفصل
-//                     for (let k = 1; k <= subjectLimit; k++) {
-//                         let grade = parseFloat(document.getElementById(`${terms[i][j]}s${k}`).value) || 0;
-//                         if (grade > 0) {
-//                             termAvg += grade;
-//                             subjectCount++;
-//                         }
-//                     }
-//                     if (subjectCount > 0) {
-//                         termAvg /= subjectCount;
-//                         yearTotal += termAvg;
-//                         termCount++;
-//                     }
-//                 }
-//                 let yearAvg = termCount > 0 ? yearTotal / termCount : 0;
-//                 yearAverages.push(yearAvg);
-//             }
+// Weight percentages for each year
+const yearWeights = {
+    'First Year': 0.15,
+    'Second Year': 0.20,
+    'Third Year': 0.20,
+    'Fourth Year': 0.20,
+    'Fifth Year': 0.25
+};
 
-//             // حساب المعدل النهائي بناءً على النسب
-//             const finalGrade = (yearAverages[0] * 0.15) + (yearAverages[1] * 0.20) +
-//                 (yearAverages[2] * 0.20) + (yearAverages[3] * 0.20) +
-//                 (yearAverages[4] * 0.25);
+function calculateYearGPA(yearSection) {
+    let yearGPA = 0;
+    let yearCredits = 0;
+    let terms = yearSection.querySelectorAll('.term-decorater');
 
-//             // عرض النتائج
-//             let resultText = `<h3>Averages:</h3>`;
-//             resultText += `FIRST YEAR: ${yearAverages[0].toFixed(2)}%<br>`;
-//             resultText += `SECOND YEAR: ${yearAverages[1].toFixed(2)}%<br>`;
-//             resultText += `THIRD YEAR: ${yearAverages[2].toFixed(2)}%<br>`;
-//             resultText += `FOURTH YEAR: ${yearAverages[3].toFixed(2)}%<br>`;
-//             resultText += `FIFTH YEAR: ${yearAverages[4].toFixed(2)}%<br>`;
-//             resultText += `<h3>Final Average: ${finalGrade.toFixed(2)}%</h3>`;
+    terms.forEach(term => {
+        let subjects = term.querySelectorAll('label');
+        subjects.forEach(subject => {
+            let credit = parseInt(subject.querySelector('.credit')?.textContent || '3');
+            let gradeSelect = subject.querySelector('select');
+            let grade = gradeSelect.value;
 
-//             document.getElementById('result').innerHTML = resultText;
-//         }
+            if (gradePoints[grade]) {
+                yearGPA += gradePoints[grade] * credit;
+                yearCredits += credit;
+            }
+        });
+    });
 
-let prev = document.querySelectorAll(".prev");
-let next = document.querySelectorAll(".next");
-let slides = document.querySelectorAll(".years");
-
-prev.forEach( (button) => {
-    button.onclick = function(){
-    goTo(currentElement-1);
-    
-} 
-
-})
-next.forEach( (button) => {
-    button.onclick = function(){
-    goTo(currentElement+1);
-    
+    return yearCredits > 0 ? (yearGPA / yearCredits).toFixed(2) : '0.00';
 }
-})
 
-currentElement = 0;
+function calculateOverallGPA() {
+    let totalWeightedGPA = 0;
+    let years = document.querySelectorAll('.years');
 
-function goTo(n){
-    slides[currentElement].classList.add("dn");
-    currentElement = (n+slides.length) % slides.length; 
-    slides[currentElement].classList.remove("dn");
+    years.forEach(year => {
+        let yearSection = year.querySelector('.year-section');
+        let yearName = year.querySelector('h2').textContent.split('(')[0].trim();
+        let yearGPA = parseFloat(calculateYearGPA(yearSection));
+        let weight = yearWeights[yearName];
+        totalWeightedGPA += yearGPA * weight;
+    });
+
+    return (totalWeightedGPA / (Object.values(yearWeights).reduce((a, b) => a + b, 0))).toFixed(2);
 }
+
+let currentElement = 0;
+let years = document.querySelectorAll(".years");
+function goTo(index) {
+    years[currentElement].classList.add("dn");
+    currentElement = (index + years.length) % years.length;
+    years[currentElement].classList.remove("dn");
+
+    let yearSection = years[currentElement].querySelector('.year-section');
+    let yearGPA = calculateYearGPA(yearSection);
+    let yearName = years[currentElement].querySelector('h2').textContent.split('(')[0].trim();
+    document.querySelector('.yearGpa').textContent = `${yearName} GPA: ${yearGPA}`;
+}
+
+document.querySelector(".number").addEventListener("click", function(event) {
+    let target = event.target;
+    if (target.classList.contains("num1")) goTo(0);
+    else if (target.classList.contains("num2")) goTo(1);
+    else if (target.classList.contains("num3")) goTo(2);
+    else if (target.classList.contains("num4")) goTo(3);
+    else if (target.classList.contains("num5")) goTo(4);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    goTo(0);
+    document.querySelectorAll('.next').forEach(button => {
+        button.addEventListener('click', () => goTo(currentElement + 1));
+    });
+    document.querySelectorAll('.prev').forEach(button => {
+        button.addEventListener('click', () => goTo(currentElement - 1));
+    });
+    document.querySelector('span.Calculate').addEventListener('click', function() {
+        let yearGPA = calculateYearGPA(years[currentElement].querySelector('.year-section'));
+        let yearName = years[currentElement].querySelector('h2').textContent.split('(')[0].trim();
+        let totalGPA = calculateOverallGPA();
+        this.parentElement.querySelector('.yearGpa').textContent = `${yearName} GPA: ${yearGPA}`;
+        this.parentElement.querySelector('.totalGpa').textContent = `Total GPA: ${totalGPA}`;
+    });
+});
 
 document.addEventListener("keydown", function() {
     if(event.key === "ArrowLeft") {
@@ -83,4 +106,3 @@ document.addEventListener("keydown", function() {
         goTo(currentElement+1);
     }
 })
-
