@@ -173,6 +173,7 @@
      position: absolute;
      left:50%;
      top: 50%;
+     min-width: 30%;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -230,6 +231,16 @@
  button {
      margin-bottom: 10px;
  }
+button:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+}
  button span{
     font-size: 13px;
     background-color: var(--primary-color);
