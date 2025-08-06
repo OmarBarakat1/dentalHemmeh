@@ -83,7 +83,7 @@ document.querySelector(".number").addEventListener("click", function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    goTo(0);
+    goTo(0);    
     document.querySelectorAll('.next').forEach(button => {
         button.addEventListener('click', () => goTo(currentElement + 1));
     });
