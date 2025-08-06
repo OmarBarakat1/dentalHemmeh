@@ -31,7 +31,7 @@ function calculateYearGPA(yearSection) {
     terms.forEach(term => {
         let subjects = term.querySelectorAll('label');
         subjects.forEach(subject => {
-            let credit = parseInt(subject.querySelector('.credit')?.textContent || '3');
+            let credit = parseFloat(subject.querySelector('.credit')?.textContent || '3');
             let gradeSelect = subject.querySelector('select');
             let grade = gradeSelect.value;
 
